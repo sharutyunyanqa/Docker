@@ -1,13 +1,11 @@
-version: '3.7'
-
+version: '3'
 services:
-
-  db:
+  postgres:
     image: postgres
-    restart: always
-    volumes:
-      - /var/lib/postgresql/data
+    container_name: postgres
     environment:
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: example
-
+      POSTGRES_DB: mydb
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: qwerty123
+    ports:
+      - 5432:5432
